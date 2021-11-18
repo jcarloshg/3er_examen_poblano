@@ -2,9 +2,16 @@ package com.example.a3er_examen_poblano;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.a3er_examen_poblano.pages.AgregarPage;
+import com.example.a3er_examen_poblano.pages.BuscarPage;
+import com.example.a3er_examen_poblano.pages.EliminarPage;
+import com.example.a3er_examen_poblano.pages.ModificarPage;
+import com.example.a3er_examen_poblano.pages.MostrarPage;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
         btn_buscar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), BuscarPage.class);
+                startActivity(intent);
             }
         });
     }
@@ -38,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
         btn_modificar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), ModificarPage.class);
+                startActivity(intent);
             }
         });
     }
@@ -47,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
         btn_eliminar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), EliminarPage.class);
+                startActivity(intent);
             }
         });
     }
@@ -56,7 +66,8 @@ public class MainActivity extends AppCompatActivity {
         btn_mostrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), MostrarPage.class);
+                startActivity(intent);
             }
         });
     }
@@ -65,7 +76,8 @@ public class MainActivity extends AppCompatActivity {
         btn_agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent = new Intent(getApplicationContext(), AgregarPage.class);
+                startActivity(intent);
             }
         });
     }
