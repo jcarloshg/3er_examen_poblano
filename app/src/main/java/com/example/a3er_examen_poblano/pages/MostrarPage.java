@@ -22,8 +22,10 @@ import com.android.volley.Response;
 public class MostrarPage extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
 
     EditText editText_info;
+
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
+
     final String URL = "http://serviciosdigitalesplus.com/catalogo.php";
 
     @Override

@@ -7,115 +7,39 @@
     tools:context=".pages.EliminarPage">
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/linearLayout2"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-        <LinearLayout
+        <EditText
+            android:id="@+id/editText_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btn_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal">
-
-            <EditText
-                android:id="@+id/editTextNumber"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="number" />
-
-            <Button
-                android:id="@+id/btn_buscar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="buscar" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ID" />
-
-            <EditText
-                android:id="@+id/editText_id"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView_nombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Nombre" />
-
-            <EditText
-                android:id="@+id/editText_nombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView4_costo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Costo" />
-
-            <EditText
-                android:id="@+id/editText_costo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView_foto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Foto" />
-
-            <EditText
-                android:id="@+id/editText_foto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName" />
-        </LinearLayout>
-
+            android:text="Eliminar" />
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Eliminar"
+        android:textAlignment="viewStart"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
