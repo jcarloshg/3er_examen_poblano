@@ -1,6 +1,8 @@
 package com.example.a3er_examen_poblano.pages;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.VoiceInteractor;
 import android.os.Bundle;
@@ -18,6 +20,10 @@ import com.example.a3er_examen_poblano.R;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import com.android.volley.Response;
+import com.example.a3er_examen_poblano.adapter.AdapterRecyclerView;
+import com.example.a3er_examen_poblano.models.Mochila;
+
+import java.util.ArrayList;
 
 public class MostrarPage extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener{
 
@@ -25,6 +31,8 @@ public class MostrarPage extends AppCompatActivity implements Response.Listener<
 
     RequestQueue request;
     JsonObjectRequest jsonObjectRequest;
+
+    RecyclerView recyclerView_mochilas;
 
     final String URL = "http://serviciosdigitalesplus.com/catalogo.php";
 
@@ -58,8 +66,24 @@ public class MostrarPage extends AppCompatActivity implements Response.Listener<
             line += "foto: " + jsonObject.optString("foto") + "\n";
 
             line += jsonArray.toString();
+            // editText_info.setText(line);
 
-            editText_info.setText(line);
+            ArrayList<Mochila> mochilas = new ArrayList<>();
+            for (int i = 0; i < jsonArray.length(); i++) {
+
+                jsonObject = jsonArray.getJSONObject(i);
+                
+                Mochila mochila = new Mochila();
+                mochila.setId(jsonObject.optString("id"));
+                mochila.setNombre (jsonObject.optString("nom"));
+                mochila.setCost(jsonObject.optString("costo"));
+                mochila.setFoto(jsonObject.optString("foto"));
+
+                mochilas.add(mochila);
+            }
+
+            AdapterRecyclerView adapterRecyclerView = new AdapterRecyclerView(mochilas);
+            recyclerView_mochilas.setAdapter(adapterRecyclerView);
 
         }catch (Exception ex){
             Log.e("[onResponse ] ", "onResponse: " + ex.toString() );
@@ -77,5 +101,11 @@ public class MostrarPage extends AppCompatActivity implements Response.Listener<
         request = Volley.newRequestQueue(getApplicationContext());
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, URL, null, this, this);
         request.add(jsonObjectRequest);
+
+        recyclerView_mochilas = findViewById(R.id.recyclerView_mochilas);
+        // add this to fix -> "E/RecyclerView: No adapter attached; skipping layout"
+        LinearLayoutManager manager = new LinearLayoutManager(getApplicationContext());
+        recyclerView_mochilas.setLayoutManager(manager);
+        recyclerView_mochilas.setHasFixedSize(true);
     }
 }
