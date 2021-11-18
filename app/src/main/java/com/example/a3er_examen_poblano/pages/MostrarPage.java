@@ -39,7 +39,6 @@ public class MostrarPage extends AppCompatActivity implements Response.Listener<
     public void onErrorResponse(VolleyError error) {
         Toast.makeText(this,""+error.toString(), Toast.LENGTH_SHORT).show();
         Log.e("[onErrorResponse]" , "onErrorResponse: " + error.toString() );
-
     }
 
     @Override
