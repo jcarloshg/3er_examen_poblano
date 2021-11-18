@@ -24,14 +24,14 @@
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextNumber"
+                android:id="@+id/editText_search"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:inputType="number" />
 
             <Button
-                android:id="@+id/btn_buscar"
+                android:id="@+id/btn_search_buscar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="buscar" />
@@ -50,7 +50,7 @@
                 android:text="ID" />
 
             <EditText
-                android:id="@+id/editText_id"
+                android:id="@+id/editText_search_id"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -70,7 +70,7 @@
                 android:text="Nombre" />
 
             <EditText
-                android:id="@+id/editText_nombre"
+                android:id="@+id/editText_search_nombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -90,7 +90,7 @@
                 android:text="Costo" />
 
             <EditText
-                android:id="@+id/editText_costo"
+                android:id="@+id/editText_search_costo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -110,7 +110,7 @@
                 android:text="Foto" />
 
             <EditText
-                android:id="@+id/editText_foto"
+                android:id="@+id/editText_search_foto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"

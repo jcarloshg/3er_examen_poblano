@@ -14,6 +14,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.a3er_examen_poblano.R;
 
 import org.json.JSONObject;
@@ -66,6 +67,7 @@ public class AgregarPage extends AppCompatActivity implements Response.Listener<
     }
 
     public void upload_obj(String url) {
+        request = Volley.newRequestQueue(getApplicationContext());
         jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
         request.add(jsonObjectRequest);
     }
